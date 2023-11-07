@@ -5,4 +5,4 @@ const Hotel =() => {
         <div>Hotel</div>
     )
 }
-export default Hote
+export default Hotel;

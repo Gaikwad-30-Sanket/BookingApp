@@ -2,6 +2,7 @@ import Featured from "../../components/featured/Featured";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import PropertyList from "../../components/propertyList/PropertyList";
+import MailList from "../../components/mailList/MailList";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import "./home.css"
 
