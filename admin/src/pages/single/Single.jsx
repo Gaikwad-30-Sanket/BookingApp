@@ -2,7 +2,7 @@ import "./single.scss"
 
 const Single = () => {
     return (
-        <div>single</div>
+        <div>Single</div>
     )
 }
 export default Single
