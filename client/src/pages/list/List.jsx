@@ -1,4 +1,6 @@
 import "./list.css";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
