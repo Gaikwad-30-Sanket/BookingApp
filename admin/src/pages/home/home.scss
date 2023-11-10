@@ -1,6 +1,16 @@
-.home{
-    background-color: rebeccapurple;
-    .title{
-        color: white;
-    }
+.home {
+    display: flex;
+
+     .homeContainer{
+         flex: 6;
+
+      .widgets,
+      .charts 
+      {
+           display: flex;
+           padding: 20px;
+           gap: 20px;
+      }
+     
+  }
 }
