@@ -15,7 +15,7 @@ router.put("/:id", updateHotel)
 router.delete("/:id", deleteHotel)
 
 //getting perticular hotel
-router.get("/find:id", getHotel)
+router.get("/find/:id", getHotel)
 
 //getting all hotels
 router.get("/", getHotels)
