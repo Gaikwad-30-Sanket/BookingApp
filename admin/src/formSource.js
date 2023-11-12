@@ -1,77 +1,120 @@
  export const userInputs = [
     {
-      id: 1,
+      id: "username",
       label: "Username",
       type: "text",
-      placeholder: "john_doe",
+      placeholder: "san_22",
     },
     {
-      id: 2,
-      label: "Name and surname",
-      type: "text",
-      placeholder: "John Doe",
-    },
-    {
-      id: 3,
+      id: "email",
       label: "Email",
-      type: "mail",
-      placeholder: "john_doe@gmail.com",
+      type: "email",
+      placeholder: "gaikwad@123",
     },
     {
-      id: 4,
+      id: "phone",
       label: "Phone",
       type: "text",
-      placeholder: "+1 234 567 89",
+      placeholder: "+91 809808080",
     },
     {
-      id: 5,
+      id: "password",
       label: "Password",
       type: "password",
     },
     {
-      id: 6,
-      label: "Address",
-      type: "text",
-      placeholder: "Elton St. 216 NewYork",
-    },
-    {
-      id: 7,
+      id: "country",
       label: "Country",
       type: "text",
-      placeholder: "USA",
+      placeholder:"India"
     },
-  ];
-  
-  export const productInputs = [
     {
-      id: 1,
+      id: "city",
+      label: "City",
+      type: "text",
+      placeholder: "Shendurni",
+    },
+    
+  ];
+
+  export const hotelInputs = [
+    {
+      id: "name",
+      label: "Name",
+      type: "text",
+      placeholder: "My Hotel",
+    },
+    {
+      id: "type",
+      label: "Type",
+      type: "text",
+      placeholder: "hotel",
+    },
+    {
+      id: "city",
+      label: "City",
+      type: "text",
+      placeholder: "Wardha",
+    },
+    {
+      id: "address",
+      label: "Address",
+      type: "text",
+      placeholder:"Jalgaon"
+    },
+    {
+      id: "distance",
+      label: "Distance from the city center",
+      type: "text",
+      placeholder:"500"
+    },
+    {
+      id: "title",
       label: "Title",
       type: "text",
-      placeholder: "Apple Macbook Pro",
+      placeholder: "The Best Hotel",
     },
     {
-      id: 2,
+      id: "desc",
       label: "Description",
       type: "text",
-      placeholder: "Description",
+      placeholder:"description"
     },
     {
-      id: 3,
-      label: "Category",
-      type: "text",
-      placeholder: "Computers",
-    },
-    {
-      id: 4,
+      id: "cheapestPrice",
       label: "Price",
       type: "text",
       placeholder: "100",
     },
-    {
-      id: 5,
-      label: "Stock",
-      type: "text",
-      placeholder: "in stock",
-    },
+    
   ];
+  
+  export const roomInputs = [
+    {
+      id: "title",
+      label: "Title",
+      type: "text",
+      placeholder: "Delux Room",
+    },
+    {
+      id: "desc",
+      label: "Description",
+      type: "email",
+      placeholder: "king size bed",
+    },
+    {
+      id: "price",
+      label: "Price",
+      type: "number",
+      placeholder: "1000",
+    },
+    {
+      id: "maxPeople",
+      label: "Max People",
+      type: "number",
+      placeholder:"2"
+    },
+    
+  ];
+  
   
