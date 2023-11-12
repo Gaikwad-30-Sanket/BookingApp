@@ -21,12 +21,15 @@ const New = ({ inputs, title }) => {
     data.append("upload_preset", "upload");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/lamadev/image/upload",
+        "https://api.cloudinary.com/v1_1/dqkaxms9w/image/upload",
+        // everything is satic from cloudinary but dqkaxms9w is my cloud name 
         data
       );
-
+     
+      console.log(uploadRes.data)
       const { url } = uploadRes.data;
 
+      
       const newUser = {
         ...info,
         img: url,
@@ -76,10 +79,10 @@ const New = ({ inputs, title }) => {
               {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
-                  <input onChange={handleChange} type={input.type} placeholder={input.placeholder} />
+                  <input onChange={handleChange} type={input.type} placeholder={input.placeholder} id={input.id}/>
                 </div>
               ))}
-              <button>Send</button>
+              <button onClick={handleClick}>Send</button>
             </form>
           </div>
         </div>

@@ -8,14 +8,14 @@ import axios from "axios";
 
 const Datatable = ({columns}) => {
   // const [data, setData] = useState(userRows);
-  const [list, setList] = useState();
+  const [list, setList] = useState("");
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const{data, loading, error} = useFetch(`/${path}`)
   useEffect(() => {
     setList(data);
   }, [data]);
- 
+  
   const handleDelete = async (id) => {
     try {
       await axios.delete(`/${path}/${id}`);
@@ -48,14 +48,14 @@ const Datatable = ({columns}) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
-        <Link to="/users/new" className="link">
+        {path}
+        <Link to={`/${path}/new`} className="link">
           Add New
         </Link>
       </div>
       <DataGrid
         className="datagrid"
-        rows={data} // we have to write here list
+        rows={list} // we have to write here list
         columns={columns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}

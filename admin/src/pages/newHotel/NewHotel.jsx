@@ -37,7 +37,7 @@ const NewHotel = () => {
           data.append("file", file);
           data.append("upload_preset", "upload");
           const uploadRes = await axios.post(
-            "https://api.cloudinary.com/v1_1/lamadev/image/upload",
+            "https://api.cloudinary.com/v1_1/dqkaxms9w/image/upload",
             data
           );
 
@@ -61,7 +61,7 @@ const NewHotel = () => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>Add New Product</h1>
+          <h1>Add New Hotel</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -87,11 +87,11 @@ const NewHotel = () => {
                   onChange={(e) => setFiles(e.target.files)}
                   style={{ display: "none" }}
                 />
-              </div>
+              </div>  
 
               {hotelInputs.map((input) => (
                 <div className="formInput" key={input.id}>
-                  <label>{input.label}</label>
+                  <label>{input.label}</label> 
                   <input
                     id={input.id}
                     onChange={handleChange}
