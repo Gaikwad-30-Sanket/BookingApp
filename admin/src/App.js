@@ -34,7 +34,8 @@ function App() {
           <Route path="login" element={<Login />} />
             <Route index element={
               <ProtectedRoute>
-                 <Home />
+                { <Home /> } 
+  
               </ProtectedRoute>
             } />
             <Route path="users">
