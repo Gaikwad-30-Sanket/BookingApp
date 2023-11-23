@@ -81,7 +81,7 @@ function App() {
                 <Single />
              </ProtectedRoute>
               } />
-              <Route
+              <Route 
                 path="new"
                 element={
                   <ProtectedRoute>
