@@ -12,14 +12,18 @@ const Navbar =() => {
           navigate("/login");
         
       };
+
+      const handleClick2 = ()=>{
+        navigate("/register");
+      }
     return (
         <div className="navbar">
             <div className="navContainer">
             <Link to="/" style={{color:"inherit", textDecoration:"none"}}>
-            <span className="logo">lamabooking</span>
+            <span className="logo">Booking.com</span>
             </Link>
                 {user? user.username : <div className="navItems">
-                    <button className="navButton">Register</button>
+                    <button onClick={handleClick2} className="navButton">Register</button>
                     <button onClick={handleClick} className="navButton">Login</button>
                </div>}
             </div>
