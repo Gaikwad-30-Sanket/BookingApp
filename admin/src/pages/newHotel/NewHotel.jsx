@@ -6,11 +6,13 @@ import { useState } from "react";
 import { hotelInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NewHotel = () => {
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
+  const navigate = useNavigate();
 
   const { data, loading, error } = useFetch("/rooms");
 
@@ -53,6 +55,7 @@ const NewHotel = () => {
       };
 
       await axios.post("/hotels", newhotel);
+      navigate("/hotels")
     } catch (err) {console.log(err)}
   };
   return (
