@@ -99,3 +99,13 @@ export const getHotelRooms = async (req, res, next) => {
     next(err);
   }
 };
+
+const countUsers = async (req, res) => {
+  try {
+    const userCount = await User.countDocuments();
+    res.json({ userCount });
+  } catch (error) {
+    console.error('Error counting users:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
