@@ -6,6 +6,9 @@ import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
+import User from "./models/User.js";
+import Hotel from "./models/Hotel.js";
+import Room from "./models/Room.js";
 
 dotenv.config();
 const app = express();
@@ -24,6 +27,65 @@ const connect = async () =>{
 // middleswares
 app.use(express.json())  // to get the data in the json format
 app.use(cookieParser())
+
+
+app.get('/api/customers/count', async (req, res) => {
+  try {
+    // Count the number of documents in the "users" collection
+    const customerCount = await User.countDocuments();
+
+    // Send the count to the React app
+    console.log(customerCount)
+    res.json({ count: customerCount });
+  } catch (error) {
+    console.error('Error fetching customer count:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/hotel/count', async (req, res) => {
+  try {
+    // Count the number of documents in the "users" collection
+    const hotelCount = await Hotel.countDocuments();
+
+    // Send the count to the React app
+    console.log(hotelCount)
+    res.json({ count: hotelCount });
+  } catch (error) {
+    console.error('Error fetching customer count:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+app.get('/api/rooms/countByTitle', async (req, res) => {
+  try {
+    // Use MongoDB aggregation to count the number of rooms for each title
+    const roomCountsByTitle = await Room.aggregate([
+      {
+        $group: {
+          _id: '$title',
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+
+    // Log the result to the console
+    console.log('Room counts by title:', roomCountsByTitle);
+
+    // Convert the result to an object for easier handling in React
+    const roomCountsObject = {};
+    roomCountsByTitle.forEach((result) => {
+      roomCountsObject[result._id] = result.count;
+    });
+
+    // Send the room counts to the React app
+    res.json(roomCountsObject);
+  } catch (error) {
+    console.error('Error fetching room counts by title:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 
 app.use("/api/auth", authRoute)
