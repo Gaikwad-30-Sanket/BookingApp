@@ -14,6 +14,7 @@ const Reserve = ({ setOpen, hotelId }) => {
   const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {
+    console.log(data)
     const start = new Date(startDate);
     const end = new Date(endDate);
 
@@ -74,7 +75,7 @@ const Reserve = ({ setOpen, hotelId }) => {
           onClick={() => setOpen(false)}
         />
         <span>Select your rooms:</span>
-        {data.map((item) => (
+        {data.map((item) => ( item &&
           <div className="rItem" key={item._id}>
             <div className="rItemInfo">
               <div className="rTitle">{item.title}</div>

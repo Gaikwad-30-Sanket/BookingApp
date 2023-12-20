@@ -34,8 +34,6 @@ app.get('/api/customers/count', async (req, res) => {
     // Count the number of documents in the "users" collection
     const customerCount = await User.countDocuments();
 
-    // Send the count to the React app
-    console.log(customerCount)
     res.json({ count: customerCount });
   } catch (error) {
     console.error('Error fetching customer count:', error);
@@ -48,8 +46,6 @@ app.get('/api/hotel/count', async (req, res) => {
     // Count the number of documents in the "users" collection
     const hotelCount = await Hotel.countDocuments();
 
-    // Send the count to the React app
-    console.log(hotelCount)
     res.json({ count: hotelCount });
   } catch (error) {
     console.error('Error fetching customer count:', error);
@@ -70,8 +66,6 @@ app.get('/api/rooms/countByTitle', async (req, res) => {
       },
     ]);
 
-    // Log the result to the console
-    console.log('Room counts by title:', roomCountsByTitle);
 
     // Convert the result to an object for easier handling in React
     const roomCountsObject = {};

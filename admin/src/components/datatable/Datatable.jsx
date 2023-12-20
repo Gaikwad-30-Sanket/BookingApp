@@ -11,8 +11,11 @@ const Datatable = ({columns}) => {
   const [list, setList] = useState("");
   const location = useLocation();
   const path = location.pathname.split("/")[1];
+
   const{data, loading, error} = useFetch(`/${path}`)
   useEffect(() => {
+    console.log(path);
+    console.log(data);
     setList(data);
   }, [data]);
   
