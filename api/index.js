@@ -98,6 +98,11 @@ app.use((err, req, res, next) => { // this middleware is to handle the error
     });
   });
 
+  // mongoose.connect(process.env.MONGO,{})
+  //   .then(result=> console.log("connected to local"))
+  //   .catch(err => console.log(err))
+  
+
 app.listen(8800, ()=>{
     connect();
     console.log("backend started")
