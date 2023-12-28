@@ -61,6 +61,15 @@ const Register = () => {
           onChange={(e)=> setPassword(e.target.password)}
           className="lInput"
         />
+
+          <input
+          type="password"
+          placeholder="Conform password"
+          id="password"
+          value={""}
+          onChange={(e)=> setPassword(e.target.password)}
+          className="lInput"
+        />  
         <button  className="lButton" onClick={handleSubmit}>
           Register
         </button>
